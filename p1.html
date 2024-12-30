@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+</head>
+<body>
+    <h1>Simple Quiz</h1>
+    <form id="quizForm" onsubmit="checkAnswer(); return false;">
+        <label>What is the capital of France?</label><br>
+        <input type="text" id="answer" required>
+        <button type="submit">Submit</button>
+    </form>
+    <p id="result"></p>
+
+    <script>
+        function checkAnswer() {
+            const answer = document.getElementById('answer').value.trim().toLowerCase();
+            const result = document.getElementById('result');
+            if (answer === 'paris') {
+                result.textContent = 'Correct!';
+            } else {
+                result.textContent = 'Try again!';
+            }
+        }
+    </script>
+</body>
+</html>
